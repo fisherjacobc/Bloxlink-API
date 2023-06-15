@@ -12,7 +12,7 @@ import type {
  * @param discordGuild
  * @param discordUserId
  * @param apiKey
- * @returns {DiscordToRobloxResponse | FailedResponse}
+ * @returns {DiscordToRobloxResponse}
  */
 export const DiscordToRoblox = async (
   discordGuild: string,
@@ -43,7 +43,7 @@ export const DiscordToRoblox = async (
  * @param discordGuild
  * @param robloxUserId
  * @param apiKey
- * @returns {RobloxToDiscordResponse | FailedResponse}
+ * @returns {RobloxToDiscordResponse}
  */
 export const RobloxToDiscord = async (
   discordGuild: string,

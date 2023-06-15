@@ -4,14 +4,13 @@ import { globalApiKey } from "../apikey";
 import type {
   DiscordToRobloxResponse,
   RobloxToDiscordResponse,
-  FailedResponse,
 } from "../../index";
 
 /**
  *
  * @param discordUserId
  * @param apiKey
- * @returns {DiscordToRobloxResponse | FailedResponse}
+ * @returns {DiscordToRobloxResponse}
  */
 export const DiscordToRoblox = async (
   discordUserId: string,
@@ -40,7 +39,7 @@ export const DiscordToRoblox = async (
  *
  * @param robloxUserId
  * @param apiKey
- * @returns {RobloxToDiscordResponse | FailedResponse}
+ * @returns {RobloxToDiscordResponse}
  */
 export const RobloxToDiscord = async (
   robloxUserId: string,
