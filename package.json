@@ -1,6 +1,6 @@
 {
   "name": "@codiium/bloxlink-api",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "An unofficial Bloxlink API wrapper for Node.js",
   "typings": "./index.d.ts",
   "exports": {
