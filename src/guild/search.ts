@@ -4,7 +4,6 @@ import { guildApiKey } from "../apikey";
 import type {
   DiscordToRobloxResponse,
   RobloxToDiscordResponse,
-  FailedResponse,
 } from "../../index";
 
 /**
