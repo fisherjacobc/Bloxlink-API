@@ -1,6 +1,6 @@
 {
   "name": "@codiium/bloxlink-api",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "description": "An unofficial Bloxlink API wrapper for Node.js",
   "typings": "./index.d.ts",
   "exports": {
@@ -17,6 +17,7 @@
   },
   "scripts": {
     "build": "tsc --noEmit --incremental false",
+    "publish": "tsc --noEmit --incremental false && npm publish --access public",
     "example:globalsearch": "node ./examples/globalsearch.js",
     "example:guildsearch": "node ./examples/guildsearch.js"
   },
