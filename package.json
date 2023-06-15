@@ -1,7 +1,8 @@
 {
   "name": "@codiium/bloxlink-api",
+  "private": false,
   "version": "4.0.0",
-  "description": "",
+  "description": "An unofficial Bloxlink API wrapper for Node.js",
   "typings": "./index.d.ts",
   "exports": {
     "./global": {
@@ -25,7 +26,7 @@
     "bloxlink-api"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.3.1",
     "axios": "^1.4.0",
