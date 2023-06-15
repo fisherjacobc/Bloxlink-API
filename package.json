@@ -1,0 +1,34 @@
+{
+  "name": "bloxlink-api",
+  "version": "4.0.0",
+  "description": "",
+  "typings": "./index.d.ts",
+  "exports": {
+    "./global": {
+      "types": "./global.d.ts",
+      "import": "./global.mjs",
+      "require": "./global.js"
+    },
+    "./guild": {
+      "types": "./guild.d.ts",
+      "import": "./guild.mjs",
+      "require": "./guild.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "example:globalsearch": "node ./examples/globalsearch.js",
+    "example:guildsearch": "node ./examples/guildsearch.js"
+  },
+  "keywords": [
+    "bloxlink",
+    "bloxlink-api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "axios": "^1.4.0",
+    "typescript": "^5.1.3"
+  }
+}

@@ -1,0 +1,17 @@
+node_modules/
+
+# Don't commit build outputs
+global.js
+global.*map
+global.d.ts
+global.mjs
+
+guild.js
+guild.*map
+guild.d.ts
+guild.mjs
+
+/src/**/*.js
+/src/**/*.*map
+/src/**/*.d.ts
+/src/**/*.mjs
