@@ -1,2 +1,8 @@
-export { setGuildApiKey } from "./src/apikey";
-export * from "./src/guild/search";
+import { setGuildApiKey } from "./src/apikey";
+import { DiscordToRoblox, RobloxToDiscord } from "./src/guild/search";
+
+export default {
+  setGuildApiKey,
+  DiscordToRoblox,
+  RobloxToDiscord,
+};
