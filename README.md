@@ -14,8 +14,6 @@ An unofficial Bloxlink API wrapper for Node.js
 
 ### Note
 
-> **Warning**: Check the package name when you are installing, as it is **case sensitive**. There is a similar package called `@codiium/bloxlink-api` that is outdated, and is **not** this package.
-
 ```
 npm install @codiium/bloxlink-api
 yarn add @codiium/bloxlink-api
