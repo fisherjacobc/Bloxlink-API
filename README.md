@@ -4,7 +4,7 @@
   <p>
     <a href="https://www.npmjs.com/package/@codiium/bloxlink-api"><img src="https://img.shields.io/npm/v/@codiium/bloxlink-api.svg?maxAge=3600" alt="npm version" /></a>
     <a href="https://www.npmjs.com/package/@codiium/bloxlink-api"><img src="https://img.shields.io/npm/dt/@codiium/bloxlink-api.svg?maxAge=3600" alt="npm downloads" /></a>
-    <a href="https://github.com/fisherjacobc/@codiium/Bloxlink-API/actions"><img src="https://github.com/fisherjacobc/Bloxlink-API/workflows/Tests/badge.svg" alt="Tests status" /></a>
+    <a href="https://github.com/fisherjacobc/Bloxlink-API/actions"><img src="https://github.com/fisherjacobc/Bloxlink-API/workflows/Tests/badge.svg" alt="Tests status" /></a>
   </p>
 </div>
 
