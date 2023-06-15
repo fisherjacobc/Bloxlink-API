@@ -1,5 +1,5 @@
 {
-  "name": "bloxlink-api",
+  "name": "@codiium/bloxlink-api",
   "version": "4.0.0",
   "description": "",
   "typings": "./index.d.ts",
