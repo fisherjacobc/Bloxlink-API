@@ -17,7 +17,7 @@
     }
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --noEmit --incremental false",
     "example:globalsearch": "node ./examples/globalsearch.js",
     "example:guildsearch": "node ./examples/guildsearch.js"
   },
