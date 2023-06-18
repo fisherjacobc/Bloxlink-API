@@ -2,24 +2,30 @@ import axios, { HttpStatusCode } from "axios";
 import { apiBaseUrl, apiVersion } from "../apiInformation";
 import { guildApiKey } from "../apikey";
 import type {
-  DiscordToRobloxResponse,
-  RobloxToDiscordResponse,
+  GuildDiscordToRobloxResponse,
+  GuildRobloxToDiscordResponse,
 } from "../../index";
 
 /**
  *
  * @param discordGuild
  * @param discordUserId
+ * @param premiumResponse
  * @param apiKey
- * @returns {DiscordToRobloxResponse}
+ * @returns {GuildDiscordToRobloxResponse}
  */
-export const DiscordToRoblox = async (
+export const DiscordToRoblox = async <Premium extends boolean = boolean>(
   discordGuild: string,
   discordUserId: string,
+  premiumResponse?: Premium,
   apiKey?: string
-): Promise<DiscordToRobloxResponse> => {
+): Promise<
+  GuildDiscordToRobloxResponse<Premium extends true ? true : false>
+> => {
   try {
-    const response = await axios<Omit<DiscordToRobloxResponse, "statusCode">>({
+    const response = await axios<
+      Omit<GuildDiscordToRobloxResponse, "statusCode">
+    >({
       method: "GET",
       url: `${apiBaseUrl}/${apiVersion}/public/guilds/${discordGuild}/discord-to-roblox/${discordUserId}`,
       headers: {
@@ -31,7 +37,7 @@ export const DiscordToRoblox = async (
     return {
       ...response.data,
       statusCode: response.status,
-    };
+    } as GuildDiscordToRobloxResponse<Premium extends true ? true : false>;
   } catch (error) {
     throw new Error(`[BLOXLINK API] ${error.response.data.error}`);
   }
@@ -41,16 +47,22 @@ export const DiscordToRoblox = async (
  *
  * @param discordGuild
  * @param robloxUserId
+ * @param premiumResponse
  * @param apiKey
- * @returns {RobloxToDiscordResponse}
+ * @returns {GuildRobloxToDiscordResponse}
  */
-export const RobloxToDiscord = async (
+export const RobloxToDiscord = async <Premium extends boolean = boolean>(
   discordGuild: string,
   robloxUserId: string,
+  premiumResponse?: Premium,
   apiKey?: string
-): Promise<RobloxToDiscordResponse> => {
+): Promise<
+  GuildRobloxToDiscordResponse<Premium extends true ? true : false>
+> => {
   try {
-    const response = await axios<Omit<RobloxToDiscordResponse, "statusCode">>({
+    const response = await axios<
+      Omit<GuildRobloxToDiscordResponse, "statusCode">
+    >({
       method: "GET",
       url: `${apiBaseUrl}/${apiVersion}/public/guilds/${discordGuild}/roblox-to-discord/${robloxUserId}`,
       headers: {
@@ -62,7 +74,7 @@ export const RobloxToDiscord = async (
     return {
       ...response.data,
       statusCode: response.status,
-    };
+    } as GuildRobloxToDiscordResponse<Premium extends true ? true : false>;
   } catch (error) {
     throw new Error(`[BLOXLINK API] ${error.response.data.error}`);
   }
