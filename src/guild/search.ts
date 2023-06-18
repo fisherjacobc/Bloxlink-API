@@ -7,15 +7,18 @@ import type {
 } from "../../index";
 
 /**
+ * Send's an API request to Bloxlink to get the Roblox ID of a Discord user
  *
- * @param discordGuild
- * @param discordUserId
- * @param premiumResponse
- * @param apiKey
+ * @method `GET`
+ *
+ * @param {string} discordGuildId The ID of the Discord guild
+ * @param {string} discordUserId The ID of the Discord user you want to get
+ * @param {boolean} premiumResponse If you have API Premium or be using an guild API key with Server Premium, you can set this to true to get an enriched response
+ * @param {string?} apiKey Optional API key to specifically use (see {@link [apikey#setGuildApiKey](../apiKey.ts)} to set an API key across all of your request)
  * @returns {GuildDiscordToRobloxResponse}
  */
 export const DiscordToRoblox = async <Premium extends boolean = boolean>(
-  discordGuild: string,
+  discordGuildId: string,
   discordUserId: string,
   premiumResponse?: Premium,
   apiKey?: string
@@ -27,7 +30,7 @@ export const DiscordToRoblox = async <Premium extends boolean = boolean>(
       Omit<GuildDiscordToRobloxResponse, "statusCode">
     >({
       method: "GET",
-      url: `${apiBaseUrl}/${apiVersion}/public/guilds/${discordGuild}/discord-to-roblox/${discordUserId}`,
+      url: `${apiBaseUrl}/${apiVersion}/public/guilds/${discordGuildId}/discord-to-roblox/${discordUserId}`,
       headers: {
         Authorization: apiKey || guildApiKey,
       },
@@ -44,15 +47,18 @@ export const DiscordToRoblox = async <Premium extends boolean = boolean>(
 };
 
 /**
+ * Send's an API request to Bloxlink to get the Discord ID of a Roblox user
  *
- * @param discordGuild
- * @param robloxUserId
- * @param premiumResponse
- * @param apiKey
+ * @method `GET`
+ *
+ * @param {string} discordGuildId The ID of the Discord guild
+ * @param {string} robloxUserId The ID of the Roblox user you want to get
+ * @param {boolean} premiumResponse If you have API Premium or be using an guild API key with Server Premium, you can set this to true to get an enriched response
+ * @param {string?} apiKey Optional API key to specifically use (see {@link [apikey#setGuildApiKey](../apiKey.ts)} to set an API key across all of your request)
  * @returns {GuildRobloxToDiscordResponse}
  */
 export const RobloxToDiscord = async <Premium extends boolean = boolean>(
-  discordGuild: string,
+  discordGuildId: string,
   robloxUserId: string,
   premiumResponse?: Premium,
   apiKey?: string
@@ -64,7 +70,7 @@ export const RobloxToDiscord = async <Premium extends boolean = boolean>(
       Omit<GuildRobloxToDiscordResponse, "statusCode">
     >({
       method: "GET",
-      url: `${apiBaseUrl}/${apiVersion}/public/guilds/${discordGuild}/roblox-to-discord/${robloxUserId}`,
+      url: `${apiBaseUrl}/${apiVersion}/public/guilds/${discordGuildId}/roblox-to-discord/${robloxUserId}`,
       headers: {
         Authorization: apiKey || guildApiKey,
       },

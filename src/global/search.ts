@@ -2,22 +2,29 @@ import axios, { HttpStatusCode } from "axios";
 import { apiBaseUrl, apiVersion } from "../apiInformation";
 import { globalApiKey } from "../apikey";
 import type {
-  DiscordToRobloxResponse,
-  RobloxToDiscordResponse,
+  GlobalDiscordToRobloxResponse,
+  GlobalRobloxToDiscordResponse,
 } from "../../index";
 
 /**
+ * Send's an API request to Bloxlink to get the Roblox ID of a Discord user
  *
- * @param discordUserId
- * @param apiKey
+ * @method `GET`
+ *
+ * @param {string} discordUserId The ID of the Discord user you want to get
+ * @param {boolean} premiumResponse If you have API Premium or be using an guild API key with Server Premium, you can set this to true to get an enriched response
+ * @param {string?} apiKey Optional API key to specifically use (see {@link [apikey#setGuildApiKey](../apiKey.ts)} to set an API key across all of your request)
  * @returns {DiscordToRobloxResponse}
  */
-export const DiscordToRoblox = async (
+export const DiscordToRoblox = async <Premium extends boolean = boolean>(
   discordUserId: string,
+  premiumResponse?: Premium,
   apiKey?: string
-): Promise<DiscordToRobloxResponse> => {
+): Promise<GlobalDiscordToRobloxResponse> => {
   try {
-    const response = await axios<Omit<DiscordToRobloxResponse, "statusCode">>({
+    const response = await axios<
+      Omit<GlobalDiscordToRobloxResponse, "statusCode">
+    >({
       method: "GET",
       url: `${apiBaseUrl}/${apiVersion}/public/discord-to-roblox/${discordUserId}`,
       headers: {
@@ -36,17 +43,22 @@ export const DiscordToRoblox = async (
 };
 
 /**
+ * Send's an API request to Bloxlink to get the Discord ID of a Roblox user
  *
- * @param robloxUserId
- * @param apiKey
- * @returns {RobloxToDiscordResponse}
+ * @method `GET`
+ *
+ * @param {string} robloxUserId The ID of the Roblox user you want to get
+ * @param {string?} apiKey Optional API key to specifically use (see {@link [apikey#setGuildApiKey](../apiKey.ts)} to set an API key across all of your request)
+ * @returns {GlobalRobloxToDiscordResponse}
  */
 export const RobloxToDiscord = async (
   robloxUserId: string,
   apiKey?: string
-): Promise<RobloxToDiscordResponse> => {
+): Promise<GlobalRobloxToDiscordResponse> => {
   try {
-    const response = await axios<Omit<RobloxToDiscordResponse, "statusCode">>({
+    const response = await axios<
+      Omit<GlobalRobloxToDiscordResponse, "statusCode">
+    >({
       method: "GET",
       url: `${apiBaseUrl}/${apiVersion}/public/roblox-to-discord/${robloxUserId}`,
       headers: {
@@ -58,7 +70,7 @@ export const RobloxToDiscord = async (
     return {
       ...response.data,
       statusCode: response.status,
-    };
+    } as GlobalRobloxToDiscordResponse;
   } catch (error) {
     throw new Error(`[BLOXLINK API] ${error.response.data.error}`);
   }
