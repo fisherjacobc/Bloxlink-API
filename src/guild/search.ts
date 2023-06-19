@@ -20,6 +20,7 @@ import type {
 export const DiscordToRoblox = async <Premium extends boolean = boolean>(
   discordGuildId: string,
   discordUserId: string,
+  //@ts-ignore surpress as it is being used for types
   premiumResponse?: Premium,
   apiKey?: string
 ): Promise<
@@ -60,6 +61,7 @@ export const DiscordToRoblox = async <Premium extends boolean = boolean>(
 export const RobloxToDiscord = async <Premium extends boolean = boolean>(
   discordGuildId: string,
   robloxUserId: string,
+  //@ts-ignore surpress as it is being used for types
   premiumResponse?: Premium,
   apiKey?: string
 ): Promise<

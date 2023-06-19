@@ -18,6 +18,7 @@ import type {
  */
 export const DiscordToRoblox = async <Premium extends boolean = boolean>(
   discordUserId: string,
+  //@ts-ignore surpress as it is being used for types
   premiumResponse?: Premium,
   apiKey?: string
 ): Promise<GlobalDiscordToRobloxResponse> => {
