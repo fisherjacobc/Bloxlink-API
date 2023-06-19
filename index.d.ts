@@ -151,7 +151,7 @@ export type GuildUpdateUserResponse = {
    * Not included in the Bloxlink API response data
    */
   statusCode: HttpStatusCode;
-  added: string[];
-  removed: string[];
+  addedRoles: string[];
+  removedRoles : string[];
   nickname: string;
 };
