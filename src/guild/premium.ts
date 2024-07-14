@@ -1,7 +1,7 @@
 import axios, { HttpStatusCode } from "axios";
 import { apiBaseUrl, apiVersion } from "../apiInformation";
 import { guildApiKey } from "../apikey";
-import type { GuildUpdateUserResponse } from "../../index";
+import type { GuildUpdateUserResponse } from "../types";
 
 /**
  * Send's an API request to Bloxlink to update the user in the provided Discord server

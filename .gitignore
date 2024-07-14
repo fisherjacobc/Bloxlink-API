@@ -15,3 +15,5 @@ guild.mjs
 /src/**/*.*map
 /src/**/*.d.ts
 /src/**/*.mjs
+
+dist/

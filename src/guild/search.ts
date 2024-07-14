@@ -4,7 +4,7 @@ import { guildApiKey } from "../apikey";
 import type {
   GuildDiscordToRobloxResponse,
   GuildRobloxToDiscordResponse,
-} from "../../index";
+} from "../types";
 
 /**
  * Send's an API request to Bloxlink to get the Roblox ID of a Discord user
